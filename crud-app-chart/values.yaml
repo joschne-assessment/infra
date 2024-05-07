@@ -3,7 +3,7 @@ green:
   enabled: true
 blue:
   appVersion: 1.1
-  enabled: false
+  enabled: true
 productionSlot: green
 resourcesRequestsMemory: 100Mi
 resourcesRequestsCpu: 100m
