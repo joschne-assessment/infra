@@ -1,6 +1,6 @@
 green:
-  appVersion: 1.0
-  enabled: false
+  appVersion: 1.1
+  enabled: true
 blue:
   appVersion: 1.1
   enabled: true
