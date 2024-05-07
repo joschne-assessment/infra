@@ -1,7 +1,8 @@
+{{ if .Values.blue.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: crud-app-deployment
+  name: crud-app-deployment-blue
   labels:
     app: crud-app
 spec:
@@ -9,14 +10,21 @@ spec:
   selector:
     matchLabels:
       app: crud-app
+      slot: blue
   template:
     metadata:
       labels:
         app: crud-app
+        slot: blue
     spec:
       containers:
-        - name: crud-app
-          image: nginxinc/nginx-unprivileged 
+        - name: crud-app-blue
+          image: kodekloud/webapp-color:latest
+          env:
+            - name: APP_COLOR
+              value: blue
+            - name: CURRENT_TIMESTAMP
+              value: {{ .Values.blue.timestamp }}
           ports:
             - name: http
               containerPort: 8080
@@ -31,8 +39,9 @@ spec:
               port: http
           resources:
             requests:
-              memory: '100Mi'
-              cpu: '1000m'
+              memory: {{ .Values.resourcesRequestsMemory }}
+              cpu: {{ .Values.resourcesRequestsCpu }}
             limits:
-              memory: "200Mi"
-              cpu: "2000m"
+              memory: {{ .Values.resourcesLimitsMemory }}
+              cpu: {{ .Values.resourcesLimitsCpu }}
+{{ end }}

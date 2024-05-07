@@ -1,0 +1,47 @@
+{{ if .Values.green.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crud-app-deployment-green
+  labels:
+    app: crud-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: crud-app
+      slot: green
+  template:
+    metadata:
+      labels:
+        app: crud-app
+        slot: green
+    spec:
+      containers:
+        - name: crud-app-green
+          image: kodekloud/webapp-color:latest
+          env:
+            - name: APP_COLOR
+              value: green
+            - name: CURRENT_TIMESTAMP
+              value: {{ .Values.green.timestamp }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            requests:
+              memory: {{ .Values.resourcesRequestsMemory }}
+              cpu: {{ .Values.resourcesRequestsCpu }}
+            limits:
+              memory: {{ .Values.resourcesLimitsMemory }}
+              cpu: {{ .Values.resourcesLimitsCpu }}
+{{ end }}

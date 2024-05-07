@@ -4,7 +4,7 @@ metadata:
   name: crud-app-service
 spec:
   selector:
-    app: crud-app
+    app: crud-app-{{ .Values.productionSlot }}
   ports:
     - protocol: TCP
       port: 8080

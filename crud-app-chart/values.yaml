@@ -1,0 +1,11 @@
+green:
+  appVersion: 1.1
+  enabled: true
+blue:
+  appVersion:
+  enabled:
+productionSlot: blue
+resourcesRequestsMemory: 100Mi
+resourcesRequestsCpu: 100m
+resourcesLimitsMemory: 100Mi
+resourcesLimitsCpu: 100m
