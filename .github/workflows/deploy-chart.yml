@@ -29,7 +29,7 @@ jobs:
     name: Deploy to OpenShift
     runs-on: ubuntu-20.04
     environment: production
-    if: '!contains(github.event.head_commit.message, "auto deploy")'
+    if: !contains(github.event.head_commit.message, 'auto deploy')
 
     outputs:
       ROUTE: ${{ steps.deploy-and-expose.outputs.route }}
