@@ -46,7 +46,7 @@ yq -i .$newSlot.appVersion=$newAppVersion values.yaml
 yq -i '.productionSlot="'"$oldSlot"'"' values.yaml
 
 # commit and push changes
-git add values.yaml && git commit -m "update values.yaml" && git push
+git add values.yaml && git commit -m "deploy version $newAppVersion on $newSlot" && git push
 
 # deploy changes to k8s cluster
 bash _deployChart.sh
@@ -62,7 +62,7 @@ yq -i .$oldSlot.enabled=false values.yaml
 yq -i '.productionSlot="'"$newSlot"'"' values.yaml
 
 # commit and push changes
-git add values.yaml && git commit -m "update values.yaml" && git push
+git add values.yaml && git commit -m "switch production slot to $newSlot" && git push
 
 # deploy changes to k8s cluster
 bash _deployChart.sh
