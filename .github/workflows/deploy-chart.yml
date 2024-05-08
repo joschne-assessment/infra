@@ -83,4 +83,4 @@ jobs:
 
         
     - name: Deploy helm chart
-      run: bash crud-app-chart/deployChart.sh       
+      run: bash crud-app-chart/_deployChart.sh       
