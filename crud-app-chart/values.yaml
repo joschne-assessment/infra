@@ -5,6 +5,7 @@ blue:
   appVersion: 1.1
   enabled: true
 productionSlot: blue
+replicas: 4
 resourcesRequestsMemory: 100Mi
 resourcesRequestsCpu: 100m
 resourcesLimitsMemory: 100Mi
