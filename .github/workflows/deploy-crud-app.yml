@@ -25,6 +25,8 @@ jobs:
   deploy-crud-app:
     name: Deploy crud app to OpenShift
     runs-on: ubuntu-latest
+    permissions: 
+      repository-projects: write
     steps:
       - name: Check for required secrets
         uses: actions/github-script@v6
