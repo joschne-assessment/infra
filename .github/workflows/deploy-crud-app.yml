@@ -76,11 +76,14 @@ jobs:
         run: |
           git config --global user.name 'joschne'
           git config --global user.email 'jonas.schneider@balcab.ch'
-          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
 
       - name: Deploy Application
         run: |
+          git config --global user.name 'joschne'
+          git config --global user.email 'jonas.schneider@balcab.ch'
           cd crud-app-chart
           bash _autoDeployBlueOrGreen.sh --app-version ${{ github.event.inputs.app_version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
