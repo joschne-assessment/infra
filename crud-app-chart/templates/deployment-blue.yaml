@@ -6,7 +6,7 @@ metadata:
   labels:
     app: crud-app
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       app: crud-app
