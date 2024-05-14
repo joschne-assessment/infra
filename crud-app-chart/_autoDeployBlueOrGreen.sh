@@ -10,7 +10,7 @@ POSITIONAL_ARGS=()
 while [[ $# -gt 0 ]]; do
   case $1 in
   --app-version)
-    newAppVersion="$2"
+    newAppVersion=$2
     shift # past argument
     shift # past value
     ;;
@@ -42,7 +42,7 @@ echo "##############################################################"
 
 # update values.yaml
 yq -i .$newSlot.enabled=true values.yaml
-yq -i .$newSlot.appVersion=$newAppVersion values.yaml
+yq -i '.$newSlot.appVersion="'"$newAppVersion"'"' values.yaml
 yq -i '.productionSlot="'"$oldSlot"'"' values.yaml
 
 # commit and push changes
