@@ -1,6 +1,6 @@
 green:
   appVersion: 1.4
-  enabled: false
+  enabled: true
 blue:
   appVersion: 1
   enabled: true
@@ -10,3 +10,5 @@ resourcesRequestsMemory: 100Mi
 resourcesRequestsCpu: 100m
 resourcesLimitsMemory: 100Mi
 resourcesLimitsCpu: 100m
+$newSlot:
+  appVersion: f178ee0
