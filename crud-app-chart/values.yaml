@@ -2,8 +2,8 @@ green:
   appVersion: 1.4
   enabled: true
 blue:
-  appVersion: 1.3
-  enabled: false
+  appVersion: 1
+  enabled: true
 productionSlot: green
 replicas: 4
 resourcesRequestsMemory: 100Mi
