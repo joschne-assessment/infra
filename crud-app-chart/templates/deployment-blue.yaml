@@ -17,14 +17,30 @@ spec:
         app: crud-app
         slot: blue
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: crud-app-blue
-          image: kodekloud/webapp-color:latest
+          image: '{{ .Values.image }}:{{ .Values.blue.appVersion }}'
           env:
             - name: APP_COLOR
               value: blue
-            - name: CURRENT_TIMESTAMP
-              value: {{ .Values.blue.timestamp }}
+            - name: APP_VERSION
+              value: '{{ .Values.blue.appVersion }}'
+            - name: QUARKUS_DATASOURCE_JDBC_URL
+              value: jdbc:postgresql://postgresql:5432/quarkus_test
+            - name: QUARKUS_DATASOURCE_USERNAME
+              value: quarkus_test
+              valueFrom:
+              secretKeyRef:
+                name: postgresql
+                key:  database-user
+            - name: QUARKUS_DATASOURCE_PASSWORD
+              value: quarkus_test
+              valueFrom:
+              secretKeyRef:
+                name: postgresql
+                key:  database-password
           ports:
             - name: http
               containerPort: 8080
@@ -33,10 +49,12 @@ spec:
             httpGet:
               path: /
               port: http
+            # failureThreshold: 20
           readinessProbe:
             httpGet:
               path: /
               port: http
+            # failureThreshold: 20
           resources:
             requests:
               memory: {{ .Values.resourcesRequestsMemory }}

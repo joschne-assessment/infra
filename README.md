@@ -19,9 +19,29 @@ oc login
 Before running the script to install the helm chart, we have to make sure the namespace `joschne-dev` exists. 
 (In open shift, a project is a namespace.)
 
+**Create image pull secret**
+
+In order to pull images from our private ghcr.io registry, we need a secret. 
+Create the secret:
+
+```bash
+bash _createImgPullSectet.sh
+```
+
 **Release**
 
 The following command will install or upgrade a helm release for the crud-app.
 ```bash
-bash crud-app-upgrade.sh 
+cd crud-app-chart
+bash _deployChart.sh 
+```
+
+**Release a new crud-app version with blue-green strategy**
+
+The following command will update the chart with the crud-app version "foo" and perform the blue-green deployment.
+The version has to correspond to the image tag.
+
+```bash
+cd crud-app-chart
+bash _autoDeployBlueOrGreen.sh --app-version foo
 ```

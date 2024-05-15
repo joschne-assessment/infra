@@ -42,7 +42,7 @@ echo "##############################################################"
 
 # update values.yaml
 yq -i .$newSlot.enabled=true values.yaml
-yq -i '.$newSlot.appVersion="'"$newAppVersion"'"' values.yaml
+yq -i '.'$newSlot'.appVersion="'"$newAppVersion"'"' values.yaml
 yq -i '.productionSlot="'"$oldSlot"'"' values.yaml
 
 # commit and push changes
