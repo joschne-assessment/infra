@@ -11,3 +11,5 @@ resourcesRequestsMemory: 100Mi
 resourcesRequestsCpu: 100m
 resourcesLimitsMemory: 100Mi
 resourcesLimitsCpu: 100m
+$newSlot:
+  appVersion: 9bf2384
