@@ -3,7 +3,7 @@ green:
   appVersion: 1.4
   enabled: true
 blue:
-  appVersion: 1
+  appVersion: 00760ae
   enabled: true
 productionSlot: green
 replicas: 4
@@ -11,5 +11,3 @@ resourcesRequestsMemory: 100Mi
 resourcesRequestsCpu: 100m
 resourcesLimitsMemory: 100Mi
 resourcesLimitsCpu: 100m
-$newSlot:
-  appVersion: 00760ae
