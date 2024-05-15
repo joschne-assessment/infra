@@ -1,7 +1,7 @@
 image: ghcr.io/joschne-assessment/crud-app
 green:
-  appVersion: 3d1e2a2
-  enabled: false
+  appVersion: 678f17f
+  enabled: true
 blue:
   appVersion: 3d1e2a2
   enabled: true
