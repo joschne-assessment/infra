@@ -24,9 +24,9 @@ spec:
           image: '{{ .Values.image }}:{{ .Values.green.appVersion }}'
           env:
             - name: APP_COLOR
-              value: blue
+              value: green
             - name: APP_VERSION
-              value: '{{ .Values.blue.appVersion }}'
+              value: '{{ .Values.green.appVersion }}'
             - name: QUARKUS_DATASOURCE_JDBC_URL
               value: jdbc:postgresql://postgresql/quarkus_test
             - name: QUARKUS_DATASOURCE_USERNAME
