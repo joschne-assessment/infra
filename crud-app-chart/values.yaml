@@ -1,11 +1,11 @@
 image: ghcr.io/joschne-assessment/crud-app
 green:
   appVersion: 00760ae
-  enabled: true
+  enabled: false
 blue:
   appVersion: 00760ae
   enabled: true
-productionSlot: green
+productionSlot: blue
 replicas: 4
 resourcesRequestsMemory: 100Mi
 resourcesRequestsCpu: 100m
