@@ -1,6 +1,6 @@
 image: ghcr.io/joschne-assessment/crud-app
 green:
-  appVersion: 1.4
+  appVersion: 00760ae
   enabled: true
 blue:
   appVersion: 00760ae
