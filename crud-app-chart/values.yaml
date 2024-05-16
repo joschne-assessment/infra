@@ -6,7 +6,7 @@ blue:
   appVersion: "c42c10b"
   enabled: false
 productionSlot: green
-replicas: 3
+replicas: 2
 resourcesRequestsMemory: 500Mi
 resourcesRequestsCpu: 400m
 resourcesLimitsMemory: 500Mi
