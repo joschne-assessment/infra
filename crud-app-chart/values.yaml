@@ -4,8 +4,8 @@ green:
   enabled: true
 blue:
   appVersion: "c42c10b"
-  enabled: true
-productionSlot: blue
+  enabled: false
+productionSlot: green
 replicas: 3
 resourcesRequestsMemory: 500Mi
 resourcesRequestsCpu: 400m
