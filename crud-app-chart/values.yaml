@@ -6,7 +6,7 @@ blue:
   appVersion: "9048d5a"
   enabled: true
 productionSlot: blue
-replicas: 2
+replicas: 3
 resourcesRequestsMemory: 500Mi
 resourcesRequestsCpu: 500m
 resourcesLimitsMemory: 500Mi
