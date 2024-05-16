@@ -8,6 +8,6 @@ blue:
 productionSlot: blue
 replicas: 3
 resourcesRequestsMemory: 500Mi
-resourcesRequestsCpu: 500m
+resourcesRequestsCpu: 400m
 resourcesLimitsMemory: 500Mi
-resourcesLimitsCpu: 500m
+resourcesLimitsCpu: 400m
