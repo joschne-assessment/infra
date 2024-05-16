@@ -3,8 +3,8 @@ green:
   appVersion: 48e4dbc
   enabled: true
 blue:
-  appVersion: "c42c10b"
-  enabled: false
+  appVersion: "9048d5a"
+  enabled: true
 productionSlot: green
 replicas: 2
 resourcesRequestsMemory: 500Mi
